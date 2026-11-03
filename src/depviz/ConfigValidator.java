@@ -11,13 +11,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-/**
- * Проверяет значения опций и собирает из них {@link Config}.
- *
- * <p>Сообщает сразу обо всех найденных ошибках, а не только о первой.
- */
 public final class ConfigValidator {
-    /** Имя файла с изображением графа по умолчанию. */
     public static final String DEFAULT_OUTPUT = "graph.svg";
 
     private static final Pattern APT_PACKAGE = Pattern.compile("[a-z0-9][a-z0-9+.-]+");
@@ -34,13 +28,6 @@ public final class ConfigValidator {
         this.values = values;
     }
 
-    /**
-     * Проверяет значения опций.
-     *
-     * @param values значения, полученные от {@link ArgumentParser}
-     * @return проверенные параметры
-     * @throws ConfigException если хотя бы одно значение неверно
-     */
     public static Config validate(Map<Option, String> values) throws ConfigException {
         ConfigValidator validator = new ConfigValidator(values);
         Config config = validator.buildConfig();

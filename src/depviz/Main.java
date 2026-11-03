@@ -4,13 +4,8 @@ import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Map;
 
-/**
- * Точка входа инструмента визуализации графа зависимостей.
- */
 public final class Main {
-    /** Код завершения при успешном запуске. */
     public static final int EXIT_OK = 0;
-    /** Код завершения при ошибке в параметрах. */
     public static final int EXIT_USAGE = 2;
 
     private static final String USAGE = "Использование: depviz -p <пакет> -r <репозиторий> [-t] [-o <файл.svg>] [-a]";
@@ -18,23 +13,10 @@ public final class Main {
     private Main() {
     }
 
-    /**
-     * Запускает приложение и завершает процесс с кодом результата.
-     *
-     * @param args аргументы командной строки
-     */
     public static void main(String[] args) {
         System.exit(run(args, System.out, System.err));
     }
 
-    /**
-     * Выполняет приложение с заданными потоками вывода.
-     *
-     * @param args аргументы командной строки
-     * @param out поток для результата
-     * @param err поток для сообщений об ошибках
-     * @return код завершения
-     */
     public static int run(String[] args, PrintStream out, PrintStream err) {
         try {
             Map<Option, String> values = ArgumentParser.parse(args);

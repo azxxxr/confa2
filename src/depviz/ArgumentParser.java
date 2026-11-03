@@ -6,11 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-/**
- * Разбирает аргументы командной строки на пары опция-значение.
- *
- * <p>Значения по смыслу здесь не проверяются, этим занимается {@link ConfigValidator}.
- */
 public final class ArgumentParser {
     private static final String TRUE_VALUE = "true";
     private static final String OPTION_PREFIX = "-";
@@ -26,13 +21,6 @@ public final class ArgumentParser {
         this.args = args.clone();
     }
 
-    /**
-     * Разбирает аргументы командной строки.
-     *
-     * @param args аргументы, переданные приложению
-     * @return значения опций; флаг без значения получает значение {@code true}
-     * @throws ConfigException если аргументы составлены неверно
-     */
     public static Map<Option, String> parse(String[] args) throws ConfigException {
         ArgumentParser parser = new ArgumentParser(args);
         parser.parseAll();

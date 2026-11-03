@@ -4,9 +4,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 
-/**
- * Тесты обработки параметров командной строки. Внешние библиотеки не требуются.
- */
 public final class MainTest {
     private static final String REPO_FILE = "tests/data/test_repo.txt";
     private static final String URL = "http://archive.ubuntu.com/ubuntu";
@@ -16,11 +13,6 @@ public final class MainTest {
     private MainTest() {
     }
 
-    /**
-     * Запускает все тесты; при наличии упавших завершает процесс с кодом 1.
-     *
-     * @param args не используются
-     */
     public static void main(String[] args) {
         testValidConfigurations();
         testBooleanFlags();

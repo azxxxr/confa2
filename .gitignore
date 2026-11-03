@@ -23,10 +23,8 @@
 hs_err_pid*
 replay_pid*
 
-# Build output
 out/
 
-# Editor and OS files
 .idea/
 .vscode/
 *.iml
